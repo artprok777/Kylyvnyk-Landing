@@ -34,10 +34,20 @@ test("prototype form cannot transmit data or collect payment details", () => {
   assert.match(html, /no payment|not sent/i);
 });
 
-test("member CTAs on the landing page point to the local join page", () => {
+test("member plan card on the landing page points to the local join page", () => {
   const html = readFileSync(new URL("index.html", root), "utf8");
   assert.doesNotMatch(html, /href="https:\/\/www\.kylyvnyk\.club\/en\/register"[^>]*>(?:Join the Club|Join as a Member)/);
-  assert.match(html, /href="join\.html"[^>]*>Join the Club/);
+  assert.match(html, /href="join\.html" aria-label="Join as a Member"/);
+});
+
+test("membership page uses the shared global header", () => {
+  const html = readFileSync(new URL("join.html", root), "utf8");
+  assert.match(html, /class="site-header"[^>]*data-header/);
+  assert.match(html, /href="index\.html">The Club<\/a>/);
+  assert.match(html, /href="join\.html" aria-current="page">Membership<\/a>/);
+  assert.match(html, /href="business\.html">Partnership<\/a>/);
+  assert.match(html, /data-mobile-menu/);
+  assert.doesNotMatch(html, /class="join-header"/);
 });
 
 test("route helper requires a referral only for partner invitations", async () => {
