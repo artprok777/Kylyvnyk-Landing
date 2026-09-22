@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+*.swp
+
+# Dependencies and test output
+node_modules/
+coverage/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+*.tmp
+
+# Local browser profiles and screenshots
+.browser-profile/
+*-profile/
+*-screenshot.png

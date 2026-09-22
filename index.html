@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kylyvnyk Club — an international business club for people, businesses, and opportunities worldwide." />
+    <title>Kylyvnyk Club — International Business Club</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Prata&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="faq.js" defer></script>
+    <script src="locales.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="header-inner shell">
+        <a class="brand" href="#top" aria-label="Kylyvnyk Club home">
+          <img class="brand-emblem" src="assets/emblem.png" alt="" />
+          <img class="brand-wordmark" src="assets/wordmark.png" alt="" />
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#about">About Us</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#partners">Our Partners</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="text-link" href="https://www.kylyvnyk.club/en/login">Sign In</a>
+          <a class="button button-small" href="join.html">Join the Club</a>
+          <label class="language-control language-control--desktop">
+            <span class="sr-only">Language</span>
+            <select aria-label="Language" data-language-select>
+              <option value="en" selected>English</option>
+              <option value="ru">Рус</option>
+              <option value="uk">Українська</option>
+            </select>
+          </label>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="mobile-menu" data-mobile-menu aria-label="Mobile navigation">
+        <a href="#about">About Us</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#partners">Our Partners</a>
+        <a href="#membership">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://www.kylyvnyk.club/en/login">Sign In</a>
+        <a class="button" href="join.html">Join the Club</a>
+        <label class="language-control language-control--mobile">
+          <span class="sr-only">Language</span>
+          <select aria-label="Language" data-language-select>
+            <option value="en" selected>English</option>
+            <option value="ru">Рус</option>
+            <option value="uk">Українська</option>
+          </select>
+        </label>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-content shell">
+          <div class="hero-copy">
+            <h1 id="hero-title" class="hero-title reveal">Build connections. <br /><span>Unlock opportunities.</span></h1>
+            <p class="hero-description reveal">Join an international community of ambitious people, trusted businesses, and exclusive member benefits — all in one club.</p>
+            <div class="hero-cta reveal">
+              <a class="button hero-primary" href="join.html">Join the Club</a>
+              <a class="button button-secondary" href="#about">Explore the Community</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stats shell reveal" aria-label="Club at a glance">
+          <div class="hero-stat"><strong>15+</strong><span>Members worldwide</span></div>
+          <div class="hero-stat"><strong>9</strong><span>Partner businesses</span></div>
+          <div class="hero-stat"><strong>4</strong><span>Countries represented</span></div>
+        </div>
+      </section>
+
+      <section class="top-partners section" aria-labelledby="top-partners-title" data-top-partners>
+        <div class="shell">
+          <div class="reference-heading reveal"><span aria-hidden="true"></span><h2 id="top-partners-title">Top Partners</h2><span aria-hidden="true"></span></div>
+          <div class="top-partner-grid">
+            <article class="top-partner-card reveal">
+              <div class="top-partner-image"><img src="assets/partner-legal.jpg" loading="lazy" alt="Bronze scales of justice" /></div>
+              <div class="top-partner-copy"><p class="top-partner-location"><span class="country-flag country-flag--ch" aria-hidden="true"></span>Switzerland · Legal services</p><h3>Swiss Legal Group</h3><p>Corporate counsel, international contracts, and practical advice for doing business across borders.</p><strong>Member consultation</strong></div>
+            </article>
+            <article class="top-partner-card reveal">
+              <div class="top-partner-image"><img src="assets/partner-auto.jpg" loading="lazy" alt="Premium vehicle in an indoor showroom" /></div>
+              <div class="top-partner-copy"><p class="top-partner-location"><span class="country-flag country-flag--ca" aria-hidden="true"></span>Canada · Automotive</p><h3>Grand Auto Premium</h3><p>Personal vehicle sourcing and a considered buying experience, from first enquiry to handover.</p><strong>Private sourcing</strong></div>
+            </article>
+            <article class="top-partner-card reveal">
+              <div class="top-partner-image"><img src="assets/partner-tech.jpg" loading="lazy" alt="Modern workspace with a meeting table and floor-to-ceiling windows" /></div>
+              <div class="top-partner-copy"><p class="top-partner-location"><span class="country-flag country-flag--us" aria-hidden="true"></span>United States · Technology</p><h3>Noir Webcraft</h3><p>Digital products, thoughtful websites, and specialist development for growing businesses.</p><strong>Project review</strong></div>
+            </article>
+          </div>
+          <a class="button-tertiary top-partners-all" href="#partners">View All Partners</a>
+        </div>
+      </section>
+
+      <section class="membership section" id="membership" aria-labelledby="membership-title">
+        <div class="shell membership-grid">
+          <div class="membership-copy reveal">
+            <h2 id="membership-title">Become part of a network built on trust.</h2>
+            <p class="lede">A single digital membership connects you to verified people, meaningful advantages, and businesses beyond borders.</p>
+            <ul class="benefit-list">
+              <li>Partner privileges across the network</li>
+              <li>Introductions to people and businesses</li>
+              <li>Opportunities beyond your home market</li>
+              <li>Your verified digital club card</li>
+            </ul>
+          </div>
+
+          <div class="hero-visual membership-pass reveal" aria-label="Kylyvnyk Club membership card">
+            <div class="hero-orbit hero-orbit-outer" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-inner" aria-hidden="true"></div>
+            <div class="hero-card-back" aria-hidden="true"></div>
+            <article class="club-card hero-club-card" aria-label="Kylyvnyk Club member pass">
+              <div class="hero-card-grain" aria-hidden="true"></div>
+              <div class="hero-card-pattern" aria-hidden="true"></div>
+              <div class="card-top"><span>Kylyvnyk Club</span><span>Member card</span></div>
+              <div class="hero-card-mark"><img src="assets/crown-gold-logo.png" alt="" /></div>
+              <div class="hero-card-title">The world is<br />within reach.</div>
+              <div class="hero-card-divider" aria-hidden="true"><span>✦</span></div>
+              <div class="card-bottom"><span>Private membership</span></div>
+            </article>
+          </div>
+        </div>
+
+        <div class="shell plan-grid reveal">
+          <a class="plan-card" href="join.html" aria-label="Join as a Member">
+            <div class="plan-icon"><img src="assets/icons/users-round.svg" alt="" /></div>
+            <h3>Member</h3>
+            <p>Meet people across the club, carry your digital card, and access selected partner benefits.</p>
+            <div class="price"><strong>$4.99</strong><span>/ month</span></div>
+            <span class="plan-card-action">Join as a Member</span>
+          </a>
+          <a class="plan-card plan-featured" href="https://www.kylyvnyk.club/en/register" aria-label="Explore VIP Membership">
+            <div class="plan-icon"><img src="assets/icons/gem.svg" alt="" /></div>
+            <h3>VIP Member</h3>
+            <p>Go further with priority introductions, enhanced partner terms, and more personal support.</p>
+            <div class="price"><strong>$19.99</strong><span>/ month</span></div>
+            <span class="plan-card-action">Explore VIP Membership</span>
+          </a>
+          <a class="plan-card plan-business" href="https://www.kylyvnyk.club/en/register" aria-label="Add Your Business">
+            <div class="business-card-photo"><img src="assets/membership-business.jpg" loading="lazy" alt="Contemporary private meeting rooms" /></div>
+            <div class="business-card-content">
+              <div class="plan-icon"><img src="assets/icons/briefcase-business.svg" alt="" /></div>
+              <h3>Business</h3>
+              <p>Introduce your company to the network, publish your offer, and build useful relationships.</p>
+              <div class="price"><strong>$19.99</strong><span>/ month</span></div>
+              <span class="plan-card-action">Add Your Business</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="process section" id="how-it-works" aria-labelledby="process-title">
+        <div class="shell">
+          <div class="section-heading centered reveal">
+            <h2 id="process-title">How It Works</h2>
+            <p>A clear path from joining the club to using your member benefits.</p>
+          </div>
+          <ol class="process-grid">
+            <li class="process-card reveal">
+              <div class="step-icon"><img src="assets/icons/user-round-plus.svg" alt="" /></div>
+              <h3>Create an account</h3>
+              <p>Register and introduce yourself to the club community.</p>
+            </li>
+            <li class="process-card reveal">
+              <div class="step-icon"><img src="assets/icons/id-card.svg" alt="" /></div>
+              <h3>Activate your card</h3>
+              <p>Keep your digital membership ready wherever you go.</p>
+            </li>
+            <li class="process-card reveal">
+              <div class="step-icon"><img src="assets/icons/handshake.svg" alt="" /></div>
+              <h3>Find a partner</h3>
+              <p>Explore businesses by location and the service you need.</p>
+            </li>
+            <li class="process-card reveal">
+              <div class="step-icon"><img src="assets/icons/badge-percent.svg" alt="" /></div>
+              <h3>Use your benefit</h3>
+              <p>Show your card to access the available member offer.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="partners section" id="partners" aria-labelledby="partners-title">
+        <div class="shell">
+          <div class="section-heading partner-heading reveal">
+            <h2 id="partners-title">Find Your Next Partner</h2>
+            <p>Search verified businesses, services, and specialists across the club network.</p>
+          </div>
+
+          <form class="partner-search reveal" data-partner-form role="search">
+            <label class="search-field">
+              <span class="sr-only">Search partners</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+              <input type="search" name="query" placeholder="Name, service, or keyword" autocomplete="off" data-search-input />
+            </label>
+            <label>
+              <span>Country</span>
+              <select name="country" data-country-filter>
+                <option value="">All countries</option>
+                <option value="ukraine">Ukraine</option>
+                <option value="united states">United States</option>
+                <option value="canada">Canada</option>
+                <option value="switzerland">Switzerland</option>
+              </select>
+            </label>
+            <label>
+              <span>City</span>
+              <select name="city" data-city-filter>
+                <option value="">All cities</option>
+                <option value="kyiv">Kyiv</option>
+                <option value="miami">Miami</option>
+                <option value="new york">New York</option>
+                <option value="los angeles">Los Angeles</option>
+                <option value="toronto">Toronto</option>
+                <option value="zurich">Zürich</option>
+              </select>
+            </label>
+            <label>
+              <span>Category</span>
+              <select name="category" data-category-filter>
+                <option value="">All categories</option>
+                <option value="healthcare">Healthcare</option>
+                <option value="fitness">Fitness</option>
+                <option value="travel">Travel</option>
+                <option value="legal">Legal</option>
+                <option value="finance">Finance</option>
+                <option value="technology">Technology</option>
+                <option value="automotive">Automotive</option>
+                <option value="real estate">Real estate</option>
+              </select>
+            </label>
+            <button class="button search-button" type="submit">Find partners</button>
+          </form>
+
+          <div class="results-bar reveal">
+            <p><span data-result-count>9</span> recommended partners</p>
+            <button type="button" data-reset-filters>Reset filters</button>
+          </div>
+
+          <div class="partner-grid" data-partner-grid>
+            <article class="partner-card reveal" data-partner data-name="Aurum Dental Care" data-country="ukraine" data-city="kyiv" data-category="healthcare" data-keywords="dentistry clinic medical kyiv">
+              <div class="partner-art art-dental"><img src="assets/icons/heart-pulse.svg" alt="" /><span>Kyiv · UA</span></div>
+              <div class="partner-body"><p class="card-meta">Healthcare</p><h3>Aurum Dental Care</h3><p>Modern dentistry in the centre of Kyiv.</p><div class="partner-benefit"><span>Member benefit</span><strong>−10%</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Northline Fitness" data-country="united states" data-city="miami" data-category="fitness" data-keywords="gym personal trainer wellness miami">
+              <div class="partner-art art-fitness"><img src="assets/icons/dumbbell.svg" alt="" /><span>Miami · US</span></div>
+              <div class="partner-body"><p class="card-meta">Fitness</p><h3>Northline Fitness</h3><p>Personal training and recovery programmes.</p><div class="partner-benefit"><span>Member benefit</span><strong>−15%</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Atlas Journey" data-country="united states" data-city="new york" data-category="travel" data-keywords="travel flights tours new york">
+              <div class="partner-art art-travel"><img src="assets/icons/plane.svg" alt="" /><span>New York · US</span></div>
+              <div class="partner-body"><p class="card-meta">Travel</p><h3>Atlas Journey</h3><p>Curated international travel experiences.</p><div class="partner-benefit"><span>Member benefit</span><strong>VIP rate</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Swiss Legal Group" data-country="switzerland" data-city="zurich" data-category="legal" data-keywords="law legal corporate zurich">
+              <div class="partner-art art-legal"><img src="assets/icons/scale.svg" alt="" /><span>Zürich · CH</span></div>
+              <div class="partner-body"><p class="card-meta">Legal</p><h3>Swiss Legal Group</h3><p>Cross-border contracts and practical corporate counsel.</p><div class="partner-benefit"><span>Member benefit</span><strong>Consultation</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Maple Finance" data-country="canada" data-city="toronto" data-category="finance" data-keywords="finance investment tax toronto">
+              <div class="partner-art art-finance"><img src="assets/icons/chart-no-axes-combined.svg" alt="" /><span>Toronto · CA</span></div>
+              <div class="partner-body"><p class="card-meta">Finance</p><h3>Maple Finance</h3><p>Financial planning for global founders.</p><div class="partner-benefit"><span>Member benefit</span><strong>Consult</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Noir Webcraft" data-country="united states" data-city="los angeles" data-category="technology" data-keywords="web software design development los angeles">
+              <div class="partner-art art-tech"><img src="assets/icons/code-xml.svg" alt="" /><span>Los Angeles · US</span></div>
+              <div class="partner-body"><p class="card-meta">Technology</p><h3>Noir Webcraft</h3><p>Premium websites and digital products.</p><div class="partner-benefit"><span>Member benefit</span><strong>−15%</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Grand Auto Premium" data-country="canada" data-city="toronto" data-category="automotive" data-keywords="cars dealership auto toronto">
+              <div class="partner-art art-auto"><img src="assets/icons/car-front.svg" alt="" /><span>Toronto · CA</span></div>
+              <div class="partner-body"><p class="card-meta">Automotive</p><h3>Grand Auto Premium</h3><p>Selected vehicles and private sourcing.</p><div class="partner-benefit"><span>Member benefit</span><strong>−7%</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Skyline Realty" data-country="united states" data-city="miami" data-category="real estate" data-keywords="property investment real estate miami">
+              <div class="partner-art art-realty"><img src="assets/icons/house.svg" alt="" /><span>Miami · US</span></div>
+              <div class="partner-body"><p class="card-meta">Real estate</p><h3>Skyline Realty</h3><p>Residential and investment property advice.</p><div class="partner-benefit"><span>Member benefit</span><strong>Priority</strong></div></div>
+            </article>
+            <article class="partner-card reveal" data-partner data-name="Kyiv Business Bureau" data-country="ukraine" data-city="kyiv" data-category="finance" data-keywords="accounting company registration consulting kyiv">
+              <div class="partner-art art-business"><img src="assets/icons/briefcase-business.svg" alt="" /><span>Kyiv · UA</span></div>
+              <div class="partner-body"><p class="card-meta">Business services</p><h3>Kyiv Business Bureau</h3><p>Company setup, accounting, and local support.</p><div class="partner-benefit"><span>Member benefit</span><strong>−12%</strong></div></div>
+            </article>
+          </div>
+
+          <div class="empty-state" data-empty-state hidden>
+            <img src="assets/icons/search.svg" alt="" /><h3>No partners found</h3><p>Try another search or clear the filters.</p><button class="button button-secondary" type="button" data-empty-reset>Show All Partners</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about" aria-labelledby="about-title">
+        <div class="shell about-grid">
+          <div class="about-visual reveal">
+            <img src="assets/about-boardroom.png" alt="Business leaders discussing a partnership around a boardroom table" loading="lazy" />
+          </div>
+          <div class="about-copy reveal">
+            <h2 id="about-title">An international community built on trust.</h2>
+            <p class="lede">Kylyvnyk Club brings together members, entrepreneurs, professionals, and companies from different countries.</p>
+            <p>Members receive a digital club card and access to partners' special offers, while companies present their business, attract clients, and grow international relationships.</p>
+            <a class="button-tertiary arrow-link" href="#membership">Our Membership</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq section" id="faq" aria-labelledby="faq-title">
+        <div class="shell faq-layout">
+          <div class="section-heading reveal">
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+            <p>Find out how membership, partner offers, and the digital card work.</p>
+            <a class="button button-secondary faq-contact" href="mailto:hello@kylyvnyk.club">Get in Touch</a>
+          </div>
+          <div class="accordion reveal" data-accordion>
+            <article class="faq-item is-open">
+              <h3><button type="button" aria-expanded="true" aria-controls="faq-panel-1" id="faq-button-1"><span>What is Kylyvnyk Club?</span><i aria-hidden="true"></i></button></h3>
+              <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-button-1"><p>An international business club for members, entrepreneurs, professionals, and companies who value trusted relationships.</p></div>
+            </article>
+            <article class="faq-item">
+              <h3><button type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-button-2"><span>What does a member receive?</span><i aria-hidden="true"></i></button></h3>
+              <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-button-2" hidden><p>A verified digital club card, partner privileges, new connections, and access to business opportunities worldwide.</p></div>
+            </article>
+            <article class="faq-item">
+              <h3><button type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-button-3"><span>How does the digital card work?</span><i aria-hidden="true"></i></button></h3>
+              <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-button-3" hidden><p>Show your active digital card to a participating partner to access the conditions available to your membership level.</p></div>
+            </article>
+            <article class="faq-item">
+              <h3><button type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-button-4"><span>Can I register my company?</span><i aria-hidden="true"></i></button></h3>
+              <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-button-4" hidden><p>Yes. Business membership lets you publish a company profile and present an offer to club members.</p></div>
+            </article>
+            <article class="faq-item">
+              <h3><button type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-button-5"><span>In which countries does the club operate?</span><i aria-hidden="true"></i></button></h3>
+              <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-button-5" hidden><p>The current directory includes businesses in Ukraine, the United States, Canada, and Switzerland.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-labelledby="cta-title">
+        <div class="shell reveal">
+          <img src="assets/crown-gold-logo.png" alt="" />
+          <h2 id="cta-title">Stronger together.<br />Without borders.</h2>
+          <a class="button" href="join.html">Become a member</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div class="footer-brand"><a class="brand" href="#top"><img src="assets/crown-gold-logo.png" alt="" /><span>Kylyvnyk Club</span></a><p>An international business club connecting people, companies, and opportunities worldwide.</p></div>
+        <div><h2>Explore</h2><a href="#about">About us</a><a href="#how-it-works">How it works</a><a href="#partners">Directory</a><a href="#membership">Membership</a></div>
+        <div><h2>Connect</h2><a href="mailto:hello@kylyvnyk.club">hello@kylyvnyk.club</a><p>Worldwide business community</p></div>
+      </div>
+      <div class="shell footer-legal" aria-label="Legal information"><span>Privacy Policy</span><span>Terms &amp; Conditions</span><span>Cookie Policy</span><span>Disclaimer</span></div>
+      <div class="shell footer-bottom"><span>© 2026 Kylyvnyk Club</span><a href="#top">Back to top ↑</a></div>
+    </footer>
+
+  </body>
+</html>
