@@ -2,7 +2,7 @@
 
 **Status:** Approved static prototype  
 **Audience:** Frontend developers, product designers, and content owners  
-**Primary references:** `index.html`, `join.html`, `styles.css`, `join.css`, `DESIGN_RULES.md`
+**Primary references:** `index.html`, `join.html`, `business.html`, `styles.css`, `join.css`, `business.css`, `DESIGN_RULES.md`
 
 ## Contents
 
@@ -28,7 +28,7 @@ The page should feel memorable through proportion, typography, and composition�
 - **Editorial confidence:** use Prata headlines, deliberate line breaks, and large areas of negative space.
 - **Useful luxury:** gold identifies hierarchy, selection, and action; it is not a general decoration colour.
 - **Trust before conversion:** explain membership conditions and keep unverified claims out of the interface.
-- **One system, two pages:** reuse shared buttons, typography, FAQ behaviour, and interaction conventions.
+- **One system, three pages:** reuse shared buttons, typography, FAQ behaviour, and interaction conventions.
 - **Progressive enhancement:** core content remains readable when scripts or animation APIs are unavailable.
 
 ## Foundations
@@ -95,6 +95,7 @@ Buttons should remain rectangular with subtle radii. Avoid pill-shaped marketing
 
 - Landing page: maximum 1240 px with 24 px desktop edge space.
 - Membership page: maximum 1180 px with 24 px desktop edge space.
+- Business partner page: maximum 1240 px with 24 px desktop edge space.
 - Mobile: 15 px edge space, expressed as `min(calc(100% - 30px), 620px)`.
 
 ### Breakpoints
@@ -118,6 +119,7 @@ Do not introduce new breakpoints until the existing four have been tested agains
 - The logo remains centered independently of the left and right controls.
 - At tablet/mobile sizes, navigation moves into the menu panel.
 - The membership page uses a compact floating header with Back to home, centered brand, Sign In, and Apply now.
+- The business page reuses the floating landing-page header, with section links, Sign In, and Apply now; it is intentionally English-only.
 - Keep focus styling visible and close the mobile menu with Escape.
 
 ### Language selector
@@ -191,6 +193,18 @@ Do not introduce new breakpoints until the existing four have been tested agains
 - The “submit” control previews a confirmation only; it does not transmit data or take payment.
 - Do not collect passwords, identity documents, card details, or payment information in this prototype.
 
+### Business partner page and demonstration application
+
+**Status:** English-only demonstration
+
+- The landing-page Business card routes to `business.html`; Member routes remain on `join.html`.
+- The current advertised partner concept is `$19.99/month`, subject to complete billing, renewal, tax, cancellation, and refund terms before activation.
+- The page explains profile visibility, one active member offer, directory placement, partner assets, update requests, community announcements when available, and onboarding support.
+- Business applications are reviewed. Submission does not guarantee acceptance, publication, introductions, referrals, customers, revenue, or rewards.
+- The application is a `role="form"` preview rather than a transmitting form. It does not send information, create a partnership, or take payment.
+- Keep the offer-guidance block and transparent FAQ language when production flows replace the prototype.
+- `business.js` exposes the pure confirmation-copy helper used by regression tests and initializes page-specific reveal behaviour only after adding the `business-js` class.
+
 ### Footer
 
 **Status:** Implemented
@@ -209,7 +223,7 @@ Do not introduce new breakpoints until the existing four have been tested agains
 
 ## Localization and content
 
-English text in `index.html` is the source language. `locales.js` maps exact source strings to Ukrainian and Russian translations, and `app.js` translates text and relevant attributes at runtime.
+English text in `index.html` is the source language. `locales.js` maps exact source strings to Ukrainian and Russian translations, and `app.js` translates text and relevant attributes at runtime. `join.html` and `business.html` remain English-only by the current product decision.
 
 When changing visible landing-page copy:
 

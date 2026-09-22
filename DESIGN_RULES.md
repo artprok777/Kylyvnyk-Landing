@@ -22,6 +22,9 @@
 - Show member offers as clear badges and keep directory card backgrounds free of noise texture.
 - Present FAQs as expandable individual cards, with a visible Get in Touch action.
 - Keep policy names in one compact footer row below the main columns. Until policy URLs exist, present them as labels rather than misleading links.
+- Keep the Business membership card linked to `business.html`. The business page reuses the shared dark-and-gold system, FAQ component, header behaviour, and page tokens.
+- Describe partner value as mechanisms—profile, offer, directory placement, introductions when available—not guaranteed customers, revenue, referrals, or rewards.
+- The current partner concept is `$19.99/month`; final billing and legal terms must be confirmed before activation.
 
 ## Content and assets
 

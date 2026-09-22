@@ -1,6 +1,6 @@
 # Kylyvnyk Club landing prototype
 
-A responsive static prototype for the Kylyvnyk Club website. It includes the public landing page, an English membership page, a searchable partner directory, shared FAQ behaviour, and Ukrainian and Russian localization for the landing page.
+A responsive static prototype for the Kylyvnyk Club website. It includes the public landing page, English membership and business-partner pages, a searchable partner directory, shared FAQ behaviour, and Ukrainian and Russian localization for the landing page.
 
 > Status: design-ready prototype. The interface is functional, but authentication, payments, form submission, member accounts, and live partner data are not connected to production services.
 
@@ -24,6 +24,7 @@ You can also open `index.html` directly from the filesystem. The scripts intenti
 | --- | --- | --- |
 | Landing page | `index.html` | English, Ukrainian, and Russian; partner filters; membership options; shared FAQ |
 | Membership page | `join.html` | English-only membership information and a non-transmitting demonstration form |
+| Business partner page | `business.html` | English-only partner plan, offer guidance, onboarding details, shared FAQ, and a non-transmitting demonstration application |
 
 ## Useful commands
 
@@ -39,6 +40,7 @@ node --check app.js
 node --check locales.js
 node --check faq.js
 node --check join.js
+node --check business.js
 ```
 
 ## Repository map
@@ -53,6 +55,9 @@ node --check join.js
 ├── join.html               Membership page markup
 ├── join.css                Membership page styling
 ├── join.js                 Membership route and demo-form behaviour
+├── business.html           Business partner page markup
+├── business.css            Business partner page styling
+├── business.js             Business partner demo-form and reveal behaviour
 ├── assets/                 Local photography, brand assets, flags, and icons
 ├── tests/                  Node.js regression tests
 ├── DESIGN_HANDOFF.md       Developer-facing design and UX specification
@@ -67,7 +72,7 @@ node --check join.js
 - Landing-page copy is translated at runtime from the English HTML source. Language selection is stored in `localStorage` when available.
 - Partner search runs entirely in the browser against the cards already present in the HTML.
 - `faq.js` initializes every `[data-accordion]` component and is shared by both pages.
-- The membership form is deliberately non-transmitting. It previews the experience but sends no data and takes no payment.
+- The membership and business-partner forms are deliberately non-transmitting. They preview the experience but send no data and take no payment.
 
 ## Handoff documentation
 
