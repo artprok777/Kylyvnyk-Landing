@@ -64,6 +64,8 @@ test("prototype confirmation is explicit about data and payment", async () => {
   assert.match(copy, /Alex/);
   assert.match(copy, /not been sent/i);
   assert.match(copy, /no payment/i);
+  assert.match(getConfirmationCopy("Олена", "uk"), /Олена.*не надіслан/i);
+  assert.match(getConfirmationCopy("Анна", "ru"), /Анна.*не отправлен/i);
 });
 
 test("membership CTAs preselect the route they describe", () => {

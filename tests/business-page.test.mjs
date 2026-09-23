@@ -83,6 +83,8 @@ test("business confirmation helper is explicit about privacy and payment", async
   assert.match(copy, /Northstar Studio/);
   assert.match(copy, /not been sent/i);
   assert.match(copy, /no payment/i);
+  assert.match(getBusinessConfirmationCopy("Студія", "uk"), /Студія.*не надіслан/i);
+  assert.match(getBusinessConfirmationCopy("Студия", "ru"), /Студия.*не отправлен/i);
 });
 
 test("business FAQ uses the shared accessible accordion", () => {

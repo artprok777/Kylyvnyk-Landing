@@ -6,6 +6,9 @@ const localeApi = globalThis.KylyvnykLocales ?? {
 const { getTranslation, translations } = localeApi;
 
 let currentLocale = "en";
+const originalDocumentTitle = typeof document !== "undefined"
+  ? document.title
+  : "Kylyvnyk Club — International Business Club";
 const originalText = new WeakMap();
 const originalAttributes = new WeakMap();
 
@@ -169,7 +172,7 @@ function translateDocument(locale) {
     }
   });
 
-  document.title = getTranslation("Kylyvnyk Club — International Business Club", locale);
+  document.title = getTranslation(originalDocumentTitle, locale);
   const toggle = document.querySelector("[data-menu-toggle]");
   if (toggle) toggle.setAttribute("aria-label", getTranslation(toggle.getAttribute("aria-expanded") === "true" ? "Close navigation" : "Open navigation", locale));
   document.querySelectorAll('a[href^="https://www.kylyvnyk.club/"]').forEach((link) => {
