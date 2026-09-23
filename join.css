@@ -238,7 +238,7 @@
 }
 
 .join-benefit-rail article + article { border-left: 1px solid rgba(216,178,97,.17); }
-.join-benefit-rail img { width: 31px; height: 31px; filter: sepia(1) saturate(.8) brightness(1.35); }
+.join-benefit-rail img { width: 31px; height: 31px; filter: brightness(0) saturate(100%) invert(78%) sepia(40%) saturate(760%) hue-rotate(358deg) brightness(94%) contrast(88%); }
 .join-benefit-rail h2 { margin: 0 0 5px; color: #eacb83; font-family: var(--body); font-size: 14px; }
 .join-benefit-rail p { margin: 0; color: #aaa59c; font-size: 14px; line-height: 1.55; }
 

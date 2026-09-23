@@ -100,6 +100,12 @@ test("practical network icons are recolored from black to gold", () => {
   assert.match(iconRule, /filter:[^;]*brightness\(0\)[^;]*invert\(/i);
 });
 
+test("membership hero icons are recolored from black to gold", () => {
+  const css = readFileSync(new URL("join.css", root), "utf8");
+  const iconRule = css.match(/\.join-benefit-rail img\s*\{([^}]*)\}/i)?.[1] ?? "";
+  assert.match(iconRule, /filter:[^;]*brightness\(0\)[^;]*invert\(/i);
+});
+
 test("inclusion grid fills its sixth cell with an editorial photograph", () => {
   const html = readFileSync(new URL("join.html", root), "utf8");
   assert.match(html, /class="join-inclusion-photo join-reveal"/);
