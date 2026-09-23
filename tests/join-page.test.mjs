@@ -34,10 +34,20 @@ test("prototype form cannot transmit data or collect payment details", () => {
   assert.match(html, /no payment|not sent/i);
 });
 
-test("member CTAs on the landing page point to the local join page", () => {
+test("member plan card on the landing page points to the local join page", () => {
   const html = readFileSync(new URL("index.html", root), "utf8");
   assert.doesNotMatch(html, /href="https:\/\/www\.kylyvnyk\.club\/en\/register"[^>]*>(?:Join the Club|Join as a Member)/);
-  assert.match(html, /href="join\.html"[^>]*>Join the Club/);
+  assert.match(html, /href="join\.html" aria-label="Join as a Member"/);
+});
+
+test("membership page uses the shared global header", () => {
+  const html = readFileSync(new URL("join.html", root), "utf8");
+  assert.match(html, /class="site-header"[^>]*data-header/);
+  assert.match(html, /href="index\.html">The Club<\/a>/);
+  assert.match(html, /href="join\.html" aria-current="page">Membership<\/a>/);
+  assert.match(html, /href="business\.html">Partnership<\/a>/);
+  assert.match(html, /data-mobile-menu/);
+  assert.doesNotMatch(html, /class="join-header"/);
 });
 
 test("route helper requires a referral only for partner invitations", async () => {
@@ -54,6 +64,8 @@ test("prototype confirmation is explicit about data and payment", async () => {
   assert.match(copy, /Alex/);
   assert.match(copy, /not been sent/i);
   assert.match(copy, /no payment/i);
+  assert.match(getConfirmationCopy("Олена", "uk"), /Олена.*не надіслан/i);
+  assert.match(getConfirmationCopy("Анна", "ru"), /Анна.*не отправлен/i);
 });
 
 test("membership CTAs preselect the route they describe", () => {
@@ -85,6 +97,12 @@ test("membership page omits decorative mini headings", () => {
 test("practical network icons are recolored from black to gold", () => {
   const css = readFileSync(new URL("join.css", root), "utf8");
   const iconRule = css.match(/\.join-icon-frame img\s*\{([^}]*)\}/i)?.[1] ?? "";
+  assert.match(iconRule, /filter:[^;]*brightness\(0\)[^;]*invert\(/i);
+});
+
+test("membership hero icons are recolored from black to gold", () => {
+  const css = readFileSync(new URL("join.css", root), "utf8");
+  const iconRule = css.match(/\.join-benefit-rail img\s*\{([^}]*)\}/i)?.[1] ?? "";
   assert.match(iconRule, /filter:[^;]*brightness\(0\)[^;]*invert\(/i);
 });
 

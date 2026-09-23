@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+const join = readFileSync(new URL("../join.html", import.meta.url), "utf8");
+const business = readFileSync(new URL("../business.html", import.meta.url), "utf8");
 
 function count(pattern) {
   return [...html.matchAll(pattern)].length;
@@ -44,4 +46,23 @@ test("featured partner cards use photos and keep country flags in their copy", (
   assert.equal([...featured.matchAll(/class="top-partner-image"><img/g)].length, 3);
   assert.equal([...featured.matchAll(/class="top-partner-location"><span class="country-flag/g)].length, 3);
   assert.doesNotMatch(featured, /class="top-flag"/);
+});
+
+test("all pages expose the same three global header destinations", () => {
+  for (const page of [html, join, business]) {
+    assert.match(page, />The Club<\/a>/);
+    assert.match(page, />Membership<\/a>/);
+    assert.match(page, />Partnership<\/a>/);
+  }
+
+  assert.match(html, /href="#top" aria-current="page">The Club<\/a>/);
+  assert.match(join, /href="join\.html" aria-current="page">Membership<\/a>/);
+  assert.match(business, /href="business\.html" aria-current="page">Partnership<\/a>/);
+});
+
+test("landing Join the Club actions scroll to the membership plans", () => {
+  assert.match(html, /class="shell plan-grid reveal" id="plans"/);
+  assert.equal(count(/href="#plans"[^>]*>Join the Club<\/a>/g), 3);
+  assert.doesNotMatch(html, /href="join\.html"[^>]*>Join the Club<\/a>/);
+  assert.match(html, /href="join\.html" aria-label="Join as a Member"/);
 });

@@ -83,6 +83,8 @@ test("business confirmation helper is explicit about privacy and payment", async
   assert.match(copy, /Northstar Studio/);
   assert.match(copy, /not been sent/i);
   assert.match(copy, /no payment/i);
+  assert.match(getBusinessConfirmationCopy("Студія", "uk"), /Студія.*не надіслан/i);
+  assert.match(getBusinessConfirmationCopy("Студия", "ru"), /Студия.*не отправлен/i);
 });
 
 test("business FAQ uses the shared accessible accordion", () => {
@@ -94,4 +96,23 @@ test("business FAQ uses the shared accessible accordion", () => {
   assert.match(html, /Can I update or pause my offer/i);
   assert.match(html, /Are referrals or rewards guaranteed/i);
   assert.match(html, /How do billing and cancellation work/i);
+});
+
+test("business header inherits the shared navigation typography", () => {
+  const html = readFileSync(new URL("business.html", root), "utf8");
+  const css = readFileSync(new URL("business.css", root), "utf8");
+  assert.match(html, /href="index\.html">The Club<\/a>/);
+  assert.match(html, /href="join\.html">Membership<\/a>/);
+  assert.match(html, /href="business\.html" aria-current="page">Partnership<\/a>/);
+  assert.doesNotMatch(css, /\.business-header\s+\.desktop-nav/);
+  assert.doesNotMatch(css, /\.business-header\s+\.header-inner/);
+});
+
+test("business typography follows the shared type scale", () => {
+  const css = readFileSync(new URL("business.css", root), "utf8");
+  assert.match(css, /\.business-hero-copy h1\s*\{[^}]*font-size:\s*clamp\(54px,\s*5\.8vw,\s*82px\)/i);
+  assert.match(css, /\.business-heading h2,[\s\S]*?font-size:\s*clamp\(40px,\s*4\.5vw,\s*62px\)/i);
+  assert.match(css, /\.business-benefit-card h3\s*\{[^}]*font-size:\s*27px/i);
+  assert.match(css, /\.business-process-grid h3\s*\{[^}]*font-size:\s*20px/i);
+  assert.match(css, /\.business-plan-price strong\s*\{[^}]*font-size:\s*31px/i);
 });

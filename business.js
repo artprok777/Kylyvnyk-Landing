@@ -1,4 +1,6 @@
-function getBusinessConfirmationCopy(companyName = "Your business") {
+function getBusinessConfirmationCopy(companyName = "Your business", locale = "en") {
+  if (locale === "uk") return `Дякуємо. Заявку компанії ${companyName} не надіслано, оплату не стягнуто.`;
+  if (locale === "ru") return `Спасибо. Заявка компании ${companyName} не отправлена, оплата не списана.`;
   return `Thank you. The ${companyName} application has not been sent, and no payment has been taken.`;
 }
 
@@ -19,7 +21,7 @@ function initBusinessApplication() {
     }
 
     const companyName = form.querySelector('[name="companyName"]')?.value.trim() || "Your business";
-    confirmationCopy.textContent = getBusinessConfirmationCopy(companyName);
+    confirmationCopy.textContent = getBusinessConfirmationCopy(companyName, document.documentElement.lang);
     form.hidden = true;
     confirmation.hidden = false;
     confirmation.focus();

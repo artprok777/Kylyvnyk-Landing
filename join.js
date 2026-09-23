@@ -2,7 +2,9 @@ function getRouteRequirements(route) {
   return { referralRequired: route === "partner" };
 }
 
-function getConfirmationCopy(firstName = "there") {
+function getConfirmationCopy(firstName = "there", locale = "en") {
+  if (locale === "uk") return `Дякуємо, ${firstName}. Вашу інформацію не надіслано, оплату не стягнуто.`;
+  if (locale === "ru") return `Спасибо, ${firstName}. Ваша информация не отправлена, оплата не списана.`;
   return `Thank you, ${firstName}. Your information has not been sent, and no payment has been taken.`;
 }
 
@@ -59,7 +61,7 @@ function initApplicationForm() {
       return;
     }
     const firstName = form.querySelector('[name="firstName"]')?.value.trim() || "there";
-    confirmationCopy.textContent = getConfirmationCopy(firstName);
+    confirmationCopy.textContent = getConfirmationCopy(firstName, document.documentElement.lang);
     form.hidden = true;
     confirmation.hidden = false;
     confirmation.focus();

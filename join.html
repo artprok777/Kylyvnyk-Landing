@@ -11,25 +11,56 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="join.css" />
     <script src="faq.js" defer></script>
+    <script src="locales.js" defer></script>
+    <script src="subpage-locales.js" defer></script>
+    <script src="app.js" defer></script>
     <script src="join.js" defer></script>
   </head>
   <body class="join-page">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="join-header">
-      <div class="shell join-header-inner">
-        <a class="join-back" href="index.html" aria-label="Back to Kylyvnyk Club home">
-          <span aria-hidden="true">←</span><span>Back to home</span>
+    <header class="site-header" data-header>
+      <div class="header-inner shell">
+        <a class="brand" href="index.html" aria-label="Kylyvnyk Club home">
+          <img class="brand-emblem" src="assets/emblem.png" alt="" />
+          <img class="brand-wordmark" src="assets/wordmark.png" alt="" />
         </a>
-        <a class="join-brand" href="index.html" aria-label="Kylyvnyk Club home">
-          <img src="assets/emblem.png" alt="" />
-          <img src="assets/wordmark.png" alt="" />
-        </a>
-        <div class="join-header-actions">
-          <a class="join-sign-in" href="https://www.kylyvnyk.club/en/login">Sign In</a>
-          <a class="join-mini-cta" href="#application" data-select-route="direct">Apply now</a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="index.html">The Club</a>
+          <a href="join.html" aria-current="page">Membership</a>
+          <a href="business.html">Partnership</a>
+        </nav>
+        <div class="header-actions">
+          <a class="text-link" href="https://www.kylyvnyk.club/en/login">Sign In</a>
+          <a class="button button-small" href="#application" data-select-route="direct">Apply now</a>
+          <label class="language-control language-control--desktop">
+            <span class="sr-only">Language</span>
+            <select aria-label="Language" data-language-select>
+              <option value="en" selected>English</option>
+              <option value="ru">Рус</option>
+              <option value="uk">Українська</option>
+            </select>
+          </label>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
+      <nav class="mobile-menu" data-mobile-menu aria-label="Mobile navigation">
+        <a href="index.html">The Club</a>
+        <a href="join.html" aria-current="page">Membership</a>
+        <a href="business.html">Partnership</a>
+        <a href="https://www.kylyvnyk.club/en/login">Sign In</a>
+        <a class="button" href="#application" data-select-route="direct">Apply now</a>
+        <label class="language-control language-control--mobile">
+          <span class="sr-only">Language</span>
+          <select aria-label="Language" data-language-select>
+            <option value="en" selected>English</option>
+            <option value="ru">Рус</option>
+            <option value="uk">Українська</option>
+          </select>
+        </label>
+      </nav>
     </header>
 
     <main id="main">
